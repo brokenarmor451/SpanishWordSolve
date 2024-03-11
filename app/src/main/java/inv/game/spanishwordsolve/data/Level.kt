@@ -130,13 +130,9 @@ class Level: ViewModel() {
   }
   
   fun makeDialog() {
-    val ll = LinearLayoutCompat(activity).also {
-    /*  val lp = LLayoutParams(LLayoutParams.WRAP_CONTENT, LLayoutParams.WRAP_CONTENT)
-      lp.weight = 1.0f
-      it.setLayoutParams(lp)*/
-    }
-    val ll2 = LinearLayoutCompat(activity).also {
-      it.setOrientation(LinearLayoutCompat.VERTICAL)
+    val ll = LinearLayoutCompat(activity)
+    val ll2 = LinearLayoutCompat(activity).apply {
+      setOrientation(LinearLayoutCompat.VERTICAL)
     }
     val confirmButton = AppCompatButton(activity).apply {
       val lp = LLayoutParams(LLayoutParams.WRAP_CONTENT, LLayoutParams.WRAP_CONTENT)
@@ -578,16 +574,6 @@ class Level: ViewModel() {
   }
   
   fun makeBottomArea() {
-    
-    val space = makeSpace(
-      LLayoutParams(
-        LLayoutParams.MATCH_PARENT,
-        LLayoutParams.WRAP_CONTENT,
-      ).apply {
-        weight = 5f
-      }
-    )
-
     exitButtonWordsTableAndCurrentLevelLayout = LinearLayoutCompat(activity).apply {
       val lp = LLayoutParams(
         LLayoutParams.MATCH_PARENT,
